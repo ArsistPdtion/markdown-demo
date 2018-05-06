@@ -10,8 +10,8 @@ def index(request):
     # print('123')
     book_list = DocumentDemo.objects.all().values('name','content')
     for book in book_list:
-        print('path:', 'C:\\Users\Admin\my_work\\' + book['name'])
-        with open(r'C:\Users\Admin\my_work\\' + book['name'] ,'w') as f:
+        print('path:', '/home/administrator/mybook/mongo/' + book['name'])
+        with open(r'/home/administrator/mybook/mongo/' + book['name'] ,'w') as f:
             f.write(book['content'])
     return render(request,'show_file.html')
 
